@@ -1,0 +1,1671 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Varshini S N | AI & ML Developer</title>
+
+    <meta name="description"
+          content="Varshini S N — Engineering student passionate about Artificial Intelligence, Machine Learning, Generative AI and software development.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+          rel="stylesheet">
+
+    <style>
+
+        /* =========================================================
+           GLOBAL
+        ========================================================= */
+
+        :root {
+            --bg: #07070a;
+            --bg-soft: #0d0d12;
+            --card: rgba(255,255,255,0.045);
+            --card-hover: rgba(255,255,255,0.075);
+
+            --text: #f5f5f7;
+            --muted: #a1a1aa;
+
+            --purple: #8b5cf6;
+            --purple-light: #a78bfa;
+            --pink: #ec4899;
+            --blue: #38bdf8;
+
+            --border: rgba(255,255,255,0.10);
+
+            --max-width: 1180px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Inter", sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        button {
+            font-family: inherit;
+        }
+
+        ::selection {
+            background: var(--purple);
+            color: white;
+        }
+
+        .container {
+            width: min(92%, var(--max-width));
+            margin: auto;
+        }
+
+
+        /* =========================================================
+           BACKGROUND
+        ========================================================= */
+
+        .background {
+            position: fixed;
+            inset: 0;
+            z-index: -10;
+            overflow: hidden;
+            pointer-events: none;
+        }
+
+        .orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(100px);
+            opacity: 0.18;
+        }
+
+        .orb.one {
+            width: 420px;
+            height: 420px;
+            background: var(--purple);
+            top: -150px;
+            left: -120px;
+        }
+
+        .orb.two {
+            width: 360px;
+            height: 360px;
+            background: var(--pink);
+            top: 35%;
+            right: -150px;
+        }
+
+        .orb.three {
+            width: 300px;
+            height: 300px;
+            background: var(--blue);
+            bottom: -120px;
+            left: 35%;
+        }
+
+        .grid-bg {
+            position: absolute;
+            inset: 0;
+
+            background-image:
+                linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+
+            background-size: 55px 55px;
+
+            mask-image: linear-gradient(to bottom, black, transparent 90%);
+        }
+
+
+        /* =========================================================
+           NAVBAR
+        ========================================================= */
+
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+
+            backdrop-filter: blur(18px);
+            background: rgba(7,7,10,0.72);
+
+            border-bottom: 1px solid rgba(255,255,255,0.06);
+        }
+
+        nav {
+            height: 76px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-family: "Space Grotesk", sans-serif;
+            font-size: 1.35rem;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+
+        .logo span {
+            color: var(--purple-light);
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #bdbdc5;
+            font-size: 0.9rem;
+            transition: 0.25s ease;
+        }
+
+        .nav-links a:hover {
+            color: white;
+        }
+
+        .nav-contact {
+            padding: 10px 17px;
+            border: 1px solid var(--border);
+            border-radius: 100px;
+            transition: 0.25s;
+        }
+
+        .nav-contact:hover {
+            background: white;
+            color: black !important;
+        }
+
+        .menu-btn {
+            display: none;
+
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.7rem;
+            cursor: pointer;
+        }
+
+
+        /* =========================================================
+           HERO
+        ========================================================= */
+
+        .hero {
+            min-height: 100vh;
+
+            display: flex;
+            align-items: center;
+
+            padding-top: 100px;
+        }
+
+        .hero-content {
+            max-width: 900px;
+        }
+
+        .available {
+            display: inline-flex;
+            align-items: center;
+            gap: 9px;
+
+            padding: 8px 14px;
+
+            border: 1px solid rgba(139,92,246,0.28);
+            background: rgba(139,92,246,0.08);
+
+            border-radius: 100px;
+
+            color: #c4b5fd;
+            font-size: 0.82rem;
+
+            margin-bottom: 28px;
+        }
+
+        .available-dot {
+            width: 7px;
+            height: 7px;
+            background: #4ade80;
+            border-radius: 50%;
+            box-shadow: 0 0 12px #4ade80;
+        }
+
+        .hero h1 {
+            font-family: "Space Grotesk", sans-serif;
+
+            font-size: clamp(3.2rem, 8vw, 6.8rem);
+
+            line-height: 0.98;
+            letter-spacing: -5px;
+
+            margin-bottom: 28px;
+        }
+
+        .gradient-text {
+            background: linear-gradient(
+                100deg,
+                #fff,
+                #c4b5fd 45%,
+                #f0abfc
+            );
+
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .hero-description {
+            max-width: 720px;
+
+            font-size: 1.12rem;
+            color: var(--muted);
+
+            margin-bottom: 34px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 14px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 9px;
+
+            padding: 13px 20px;
+
+            border-radius: 12px;
+
+            font-size: 0.92rem;
+            font-weight: 600;
+
+            transition: 0.3s ease;
+        }
+
+        .btn-primary {
+            background: white;
+            color: #09090b;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(255,255,255,0.12);
+        }
+
+        .btn-secondary {
+            border: 1px solid var(--border);
+            background: rgba(255,255,255,0.035);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255,255,255,0.09);
+            transform: translateY(-3px);
+        }
+
+        .scroll-indicator {
+            margin-top: 80px;
+
+            display: flex;
+            align-items: center;
+            gap: 10px;
+
+            color: #71717a;
+            font-size: 0.78rem;
+        }
+
+        .scroll-line {
+            width: 35px;
+            height: 1px;
+            background: #52525b;
+        }
+
+
+        /* =========================================================
+           SECTION
+        ========================================================= */
+
+        section {
+            padding: 115px 0;
+        }
+
+        .section-heading {
+            margin-bottom: 50px;
+        }
+
+        .eyebrow {
+            color: var(--purple-light);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.72rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .section-heading h2 {
+            font-family: "Space Grotesk", sans-serif;
+            font-size: clamp(2rem, 4vw, 3.1rem);
+            letter-spacing: -1.5px;
+        }
+
+        .section-heading p {
+            color: var(--muted);
+            margin-top: 12px;
+            max-width: 650px;
+        }
+
+
+        /* =========================================================
+           ABOUT
+        ========================================================= */
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 30px;
+        }
+
+        .glass-card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 22px;
+
+            padding: 30px;
+
+            backdrop-filter: blur(10px);
+
+            transition: 0.35s ease;
+        }
+
+        .glass-card:hover {
+            background: var(--card-hover);
+            border-color: rgba(167,139,250,0.22);
+            transform: translateY(-5px);
+        }
+
+        .about-main p {
+            color: #b4b4bd;
+            margin-bottom: 17px;
+        }
+
+        .about-main p:last-child {
+            margin-bottom: 0;
+        }
+
+        .about-side {
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+        }
+
+        .mini-card {
+            display: flex;
+            gap: 17px;
+            align-items: center;
+        }
+
+        .mini-icon {
+            width: 46px;
+            height: 46px;
+
+            display: grid;
+            place-items: center;
+
+            background: rgba(139,92,246,0.12);
+            border: 1px solid rgba(139,92,246,0.2);
+
+            border-radius: 12px;
+
+            font-size: 1.2rem;
+        }
+
+        .mini-card h3 {
+            font-size: 0.95rem;
+            margin-bottom: 3px;
+        }
+
+        .mini-card p {
+            color: #8d8d96;
+            font-size: 0.8rem;
+        }
+
+
+        /* =========================================================
+           SKILLS
+        ========================================================= */
+
+        .skills-wrapper {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .skill-category h3 {
+            font-size: 1rem;
+            margin-bottom: 20px;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 9px;
+        }
+
+        .skill-tag {
+            padding: 8px 12px;
+
+            border-radius: 9px;
+
+            background: rgba(255,255,255,0.045);
+            border: 1px solid rgba(255,255,255,0.08);
+
+            color: #c7c7ce;
+
+            font-size: 0.78rem;
+
+            transition: 0.25s;
+        }
+
+        .skill-tag:hover {
+            color: white;
+            border-color: rgba(167,139,250,0.35);
+            background: rgba(139,92,246,0.08);
+            transform: translateY(-2px);
+        }
+
+
+        /* =========================================================
+           PROJECTS
+        ========================================================= */
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+        }
+
+        .project-card {
+            position: relative;
+            overflow: hidden;
+
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 24px;
+
+            padding: 30px;
+
+            transition: 0.4s ease;
+        }
+
+        .project-card::before {
+            content: "";
+
+            position: absolute;
+            top: -100px;
+            right: -100px;
+
+            width: 200px;
+            height: 200px;
+
+            border-radius: 50%;
+
+            background: var(--purple);
+
+            filter: blur(80px);
+            opacity: 0.12;
+        }
+
+        .project-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(167,139,250,0.3);
+        }
+
+        .project-number {
+            color: #71717a;
+            font-size: 0.72rem;
+            margin-bottom: 28px;
+        }
+
+        .project-card h3 {
+            font-family: "Space Grotesk", sans-serif;
+            font-size: 1.65rem;
+            margin-bottom: 12px;
+        }
+
+        .project-card p {
+            color: #9999a3;
+            font-size: 0.9rem;
+            line-height: 1.7;
+            margin-bottom: 22px;
+        }
+
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 27px;
+        }
+
+        .project-tech span {
+            font-size: 0.7rem;
+            color: #c4b5fd;
+
+            padding: 6px 9px;
+
+            border-radius: 7px;
+
+            background: rgba(139,92,246,0.08);
+            border: 1px solid rgba(139,92,246,0.15);
+        }
+
+        .project-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+
+            font-size: 0.83rem;
+            font-weight: 600;
+
+            transition: 0.25s;
+        }
+
+        .project-link:hover {
+            color: var(--purple-light);
+            gap: 12px;
+        }
+
+
+        /* =========================================================
+           EDUCATION
+        ========================================================= */
+
+        .timeline {
+            position: relative;
+            max-width: 850px;
+        }
+
+        .timeline::before {
+            content: "";
+
+            position: absolute;
+            left: 8px;
+            top: 10px;
+            bottom: 10px;
+
+            width: 1px;
+
+            background: rgba(255,255,255,0.1);
+        }
+
+        .timeline-item {
+            position: relative;
+            padding-left: 42px;
+            margin-bottom: 42px;
+        }
+
+        .timeline-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            left: 0;
+            top: 8px;
+
+            width: 17px;
+            height: 17px;
+
+            border-radius: 50%;
+
+            background: var(--bg);
+            border: 4px solid var(--purple);
+
+            box-shadow: 0 0 18px rgba(139,92,246,0.5);
+        }
+
+        .timeline-date {
+            color: var(--purple-light);
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-bottom: 7px;
+        }
+
+        .timeline-item h3 {
+            font-family: "Space Grotesk", sans-serif;
+            font-size: 1.2rem;
+        }
+
+        .timeline-item h4 {
+            color: #aaaab3;
+            font-size: 0.88rem;
+            font-weight: 500;
+            margin-top: 4px;
+        }
+
+        .timeline-item p {
+            color: #85858f;
+            font-size: 0.82rem;
+            margin-top: 8px;
+        }
+
+
+        /* =========================================================
+           CONTACT
+        ========================================================= */
+
+        .contact-card {
+            position: relative;
+            overflow: hidden;
+
+            text-align: center;
+
+            padding: 70px 30px;
+
+            border-radius: 28px;
+
+            background:
+                radial-gradient(
+                    circle at center,
+                    rgba(139,92,246,0.14),
+                    transparent 55%
+                ),
+                var(--card);
+
+            border: 1px solid var(--border);
+        }
+
+        .contact-card h2 {
+            font-family: "Space Grotesk", sans-serif;
+            font-size: clamp(2.2rem, 5vw, 4rem);
+            letter-spacing: -2px;
+            margin-bottom: 16px;
+        }
+
+        .contact-card p {
+            color: #92929c;
+            max-width: 600px;
+            margin: auto;
+            margin-bottom: 30px;
+        }
+
+        .socials {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 11px;
+            margin-top: 25px;
+        }
+
+        .social {
+            padding: 9px 15px;
+
+            border: 1px solid var(--border);
+            border-radius: 10px;
+
+            color: #a7a7b0;
+
+            font-size: 0.78rem;
+
+            transition: 0.25s;
+        }
+
+        .social:hover {
+            color: white;
+            border-color: rgba(167,139,250,0.35);
+            background: rgba(139,92,246,0.08);
+            transform: translateY(-3px);
+        }
+
+
+        /* =========================================================
+           FOOTER
+        ========================================================= */
+
+        footer {
+            padding: 30px 0 45px;
+
+            color: #5f5f68;
+            font-size: 0.75rem;
+
+            text-align: center;
+        }
+
+        .footer-line {
+            width: 100%;
+            height: 1px;
+            background: rgba(255,255,255,0.06);
+            margin-bottom: 25px;
+        }
+
+
+        /* =========================================================
+           ANIMATION
+        ========================================================= */
+
+        .fade-up {
+            opacity: 0;
+            transform: translateY(25px);
+            animation: fadeUp 0.8s ease forwards;
+        }
+
+        .delay-1 {
+            animation-delay: 0.1s;
+        }
+
+        .delay-2 {
+            animation-delay: 0.2s;
+        }
+
+        .delay-3 {
+            animation-delay: 0.3s;
+        }
+
+        @keyframes fadeUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+
+        /* =========================================================
+           RESPONSIVE
+        ========================================================= */
+
+        @media (max-width: 800px) {
+
+            .nav-links {
+                position: fixed;
+
+                top: 76px;
+                left: 0;
+                right: 0;
+
+                display: none;
+
+                flex-direction: column;
+                align-items: flex-start;
+
+                padding: 25px;
+
+                background: rgba(7,7,10,0.96);
+                border-bottom: 1px solid var(--border);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .menu-btn {
+                display: block;
+            }
+
+            .hero h1 {
+                letter-spacing: -3px;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .skills-wrapper {
+                grid-template-columns: 1fr;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            section {
+                padding: 85px 0;
+            }
+        }
+
+        @media (max-width: 500px) {
+
+            .hero {
+                padding-top: 130px;
+            }
+
+            .hero h1 {
+                font-size: 3rem;
+            }
+
+            .hero-description {
+                font-size: 0.95rem;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .btn {
+                width: 100%;
+            }
+
+            .glass-card,
+            .project-card {
+                padding: 23px;
+            }
+
+            .contact-card {
+                padding: 50px 20px;
+            }
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+<!-- =========================================================
+     BACKGROUND
+========================================================= -->
+
+<div class="background">
+    <div class="orb one"></div>
+    <div class="orb two"></div>
+    <div class="orb three"></div>
+    <div class="grid-bg"></div>
+</div>
+
+
+<!-- =========================================================
+     NAVBAR
+========================================================= -->
+
+<header>
+
+    <div class="container">
+
+        <nav>
+
+            <a href="#home" class="logo">
+                Varshini<span>.</span>
+            </a>
+
+            <button class="menu-btn" id="menuBtn">
+                ☰
+            </button>
+
+            <ul class="nav-links" id="navLinks">
+
+                <li>
+                    <a href="#home">Home</a>
+                </li>
+
+                <li>
+                    <a href="#about">About</a>
+                </li>
+
+                <li>
+                    <a href="#skills">Skills</a>
+                </li>
+
+                <li>
+                    <a href="#projects">Projects</a>
+                </li>
+
+                <li>
+                    <a href="#education">Education</a>
+                </li>
+
+                <li>
+                    <a href="#contact" class="nav-contact">
+                        Contact
+                    </a>
+                </li>
+
+            </ul>
+
+        </nav>
+
+    </div>
+
+</header>
+
+
+
+<!-- =========================================================
+     HERO
+========================================================= -->
+
+<main>
+
+<section class="hero" id="home">
+
+    <div class="container">
+
+        <div class="hero-content">
+
+            <div class="available fade-up">
+                <span class="available-dot"></span>
+                Engineering Student • AI & ML Developer
+            </div>
+
+            <h1 class="fade-up delay-1">
+                Building
+                <span class="gradient-text">
+                    intelligent
+                </span>
+                solutions.
+            </h1>
+
+            <p class="hero-description fade-up delay-2">
+                I'm Varshini S N, an engineering student passionate about
+                Artificial Intelligence, Machine Learning, Generative AI
+                and software development. I enjoy transforming ideas into
+                practical AI-powered applications.
+            </p>
+
+            <div class="hero-buttons fade-up delay-3">
+
+                <a href="#projects" class="btn btn-primary">
+                    View My Work
+                    →
+                </a>
+
+                <a href="#contact" class="btn btn-secondary">
+                    Let's Connect
+                </a>
+
+            </div>
+
+            <div class="scroll-indicator fade-up delay-3">
+
+                <span class="scroll-line"></span>
+
+                Scroll to explore
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     ABOUT
+========================================================= -->
+
+<section id="about">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <div class="eyebrow">
+                About Me
+            </div>
+
+            <h2>
+                Curious by nature.<br>
+                Builder by choice.
+            </h2>
+
+            <p>
+                I enjoy learning new technologies and turning concepts
+                into useful software.
+            </p>
+
+        </div>
+
+
+        <div class="about-grid">
+
+            <div class="glass-card about-main">
+
+                <p>
+                    I am an engineering student with a strong interest in
+                    <strong>Artificial Intelligence, Machine Learning,
+                    and software development.</strong>
+                </p>
+
+                <p>
+                    I enjoy solving real-world problems by building
+                    AI-powered applications using technologies such as
+                    Python, Generative AI, RAG, FastAPI and Streamlit.
+                </p>
+
+                <p>
+                    Through projects such as
+                    <strong>CareerPilot AI</strong> and
+                    <strong>Synora AI</strong>, I have explored areas
+                    including intelligent document processing,
+                    resume analysis, semantic search and
+                    AI-assisted career and academic tools.
+                </p>
+
+                <p>
+                    I am a continuous learner who enjoys experimenting
+                    with new technologies, building practical solutions
+                    and growing through hands-on projects.
+                </p>
+
+            </div>
+
+
+            <div class="about-side">
+
+                <div class="glass-card mini-card">
+
+                    <div class="mini-icon">
+                        AI
+                    </div>
+
+                    <div>
+                        <h3>Artificial Intelligence</h3>
+                        <p>Generative AI • RAG • ML</p>
+                    </div>
+
+                </div>
+
+
+                <div class="glass-card mini-card">
+
+                    <div class="mini-icon">
+                        &lt;/&gt;
+                    </div>
+
+                    <div>
+                        <h3>Software Development</h3>
+                        <p>Python • APIs • Web Apps</p>
+                    </div>
+
+                </div>
+
+
+                <div class="glass-card mini-card">
+
+                    <div class="mini-icon">
+                        ✦
+                    </div>
+
+                    <div>
+                        <h3>Continuous Learning</h3>
+                        <p>Projects • Experiments • Growth</p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     SKILLS
+========================================================= -->
+
+<section id="skills">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <div class="eyebrow">
+                Skills
+            </div>
+
+            <h2>
+                Technologies I work with.
+            </h2>
+
+            <p>
+                A growing toolkit built through projects,
+                experimentation and hands-on development.
+            </p>
+
+        </div>
+
+
+        <div class="skills-wrapper">
+
+
+            <div class="glass-card skill-category">
+
+                <h3>
+                    Programming
+                </h3>
+
+                <div class="skill-tags">
+
+                    <span class="skill-tag">Python</span>
+                    <span class="skill-tag">Java</span>
+                    <span class="skill-tag">HTML5</span>
+                    <span class="skill-tag">JavaScript</span>
+
+                </div>
+
+            </div>
+
+
+            <div class="glass-card skill-category">
+
+                <h3>
+                    AI & Machine Learning
+                </h3>
+
+                <div class="skill-tags">
+
+                    <span class="skill-tag">Artificial Intelligence</span>
+                    <span class="skill-tag">Machine Learning</span>
+                    <span class="skill-tag">Generative AI</span>
+                    <span class="skill-tag">RAG</span>
+                    <span class="skill-tag">TensorFlow</span>
+                    <span class="skill-tag">PyTorch</span>
+                    <span class="skill-tag">Keras</span>
+                    <span class="skill-tag">Scikit-learn</span>
+
+                </div>
+
+            </div>
+
+
+            <div class="glass-card skill-category">
+
+                <h3>
+                    Development
+                </h3>
+
+                <div class="skill-tags">
+
+                    <span class="skill-tag">FastAPI</span>
+                    <span class="skill-tag">Streamlit</span>
+                    <span class="skill-tag">Flask</span>
+                    <span class="skill-tag">Django</span>
+                    <span class="skill-tag">React</span>
+                    <span class="skill-tag">Node.js</span>
+                    <span class="skill-tag">Express.js</span>
+                    <span class="skill-tag">Flutter</span>
+
+                </div>
+
+            </div>
+
+
+            <div class="glass-card skill-category">
+
+                <h3>
+                    Data & Databases
+                </h3>
+
+                <div class="skill-tags">
+
+                    <span class="skill-tag">NumPy</span>
+                    <span class="skill-tag">Pandas</span>
+                    <span class="skill-tag">Matplotlib</span>
+                    <span class="skill-tag">MySQL</span>
+                    <span class="skill-tag">SQLite</span>
+                    <span class="skill-tag">MongoDB</span>
+                    <span class="skill-tag">PostgreSQL</span>
+                    <span class="skill-tag">Supabase</span>
+
+                </div>
+
+            </div>
+
+
+            <div class="glass-card skill-category">
+
+                <h3>
+                    Cloud & Tools
+                </h3>
+
+                <div class="skill-tags">
+
+                    <span class="skill-tag">Git</span>
+                    <span class="skill-tag">GitHub</span>
+                    <span class="skill-tag">Docker</span>
+                    <span class="skill-tag">AWS</span>
+                    <span class="skill-tag">Google Cloud</span>
+                    <span class="skill-tag">Netlify</span>
+                    <span class="skill-tag">Render</span>
+
+                </div>
+
+            </div>
+
+
+            <div class="glass-card skill-category">
+
+                <h3>
+                    Other Tools
+                </h3>
+
+                <div class="skill-tags">
+
+                    <span class="skill-tag">Power BI</span>
+                    <span class="skill-tag">Canva</span>
+                    <span class="skill-tag">Anaconda</span>
+                    <span class="skill-tag">NPM</span>
+                    <span class="skill-tag">.NET</span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     PROJECTS
+========================================================= -->
+
+<section id="projects">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <div class="eyebrow">
+                Selected Work
+            </div>
+
+            <h2>
+                Things I've built.
+            </h2>
+
+            <p>
+                A selection of AI-focused projects where I turn ideas
+                into working applications.
+            </p>
+
+        </div>
+
+
+        <div class="projects-grid">
+
+
+            <!-- CAREERPILOT -->
+
+            <article class="project-card">
+
+                <div class="project-number">
+                    01 / PROJECT
+                </div>
+
+                <h3>
+                    CareerPilot AI
+                </h3>
+
+                <p>
+                    An AI-powered career assistance application exploring
+                    resume analysis, intelligent career guidance and
+                    AI-assisted tools designed to help users make
+                    better career decisions.
+                </p>
+
+                <div class="project-tech">
+
+                    <span>Python</span>
+                    <span>Generative AI</span>
+                    <span>RAG</span>
+                    <span>Streamlit</span>
+                    <span>FastAPI</span>
+
+                </div>
+
+                <a
+                    href="https://github.com/varshinisn98-png/CareerPilot-AI"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="project-link">
+
+                    View on GitHub
+                    ↗
+
+                </a>
+
+            </article>
+
+
+
+            <!-- SYNORA -->
+
+            <article class="project-card">
+
+                <div class="project-number">
+                    02 / PROJECT
+                </div>
+
+                <h3>
+                    Synora AI
+                </h3>
+
+                <p>
+                    An AI-focused application exploring intelligent
+                    information processing, semantic search and
+                    AI-assisted academic and productivity workflows.
+                </p>
+
+                <div class="project-tech">
+
+                    <span>Python</span>
+                    <span>AI</span>
+                    <span>RAG</span>
+                    <span>Semantic Search</span>
+                    <span>Streamlit</span>
+
+                </div>
+
+                <a
+                    href="https://github.com/varshinisn98-png/synora-ai"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="project-link">
+
+                    View on GitHub
+                    ↗
+
+                </a>
+
+            </article>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     EDUCATION
+========================================================= -->
+
+<section id="education">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <div class="eyebrow">
+                Education
+            </div>
+
+            <h2>
+                My learning journey.
+            </h2>
+
+        </div>
+
+
+        <div class="timeline">
+
+            <div class="timeline-item">
+
+                <div class="timeline-dot"></div>
+
+                <div class="timeline-date">
+                    ENGINEERING
+                </div>
+
+                <h3>
+                    Engineering Student
+                </h3>
+
+                <h4>
+                    Computer Science / Technology
+                </h4>
+
+                <p>
+                    Developing a strong foundation in software development,
+                    artificial intelligence, machine learning and
+                    modern technologies through academic learning
+                    and hands-on projects.
+                </p>
+
+            </div>
+
+
+            <div class="timeline-item">
+
+                <div class="timeline-dot"></div>
+
+                <div class="timeline-date">
+                    CURRENT FOCUS
+                </div>
+
+                <h3>
+                    Artificial Intelligence & Software Development
+                </h3>
+
+                <h4>
+                    Continuous Learning
+                </h4>
+
+                <p>
+                    Exploring Generative AI, RAG, intelligent applications,
+                    backend development and practical AI solutions.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     CONTACT
+========================================================= -->
+
+<section id="contact">
+
+    <div class="container">
+
+        <div class="contact-card">
+
+            <div class="eyebrow">
+                Get In Touch
+            </div>
+
+            <h2>
+                Let's build something
+                <span class="gradient-text">
+                    meaningful.
+                </span>
+            </h2>
+
+            <p>
+                I'm always interested in learning, collaborating,
+                exploring new technologies and building useful
+                software solutions.
+            </p>
+
+
+            <a
+                href="mailto:varshinisn98@gmail.com"
+                class="btn btn-primary">
+
+                Say Hello
+                →
+                
+            </a>
+
+
+            <div class="socials">
+
+                <a
+                    class="social"
+                    href="https://github.com/varshinisn98-png"
+                    target="_blank"
+                    rel="noopener noreferrer">
+
+                    GitHub
+
+                </a>
+
+                <a
+                    class="social"
+                    href="https://www.linkedin.com/in/varshini-s-n-537865302"
+                    target="_blank"
+                    rel="noopener noreferrer">
+
+                    LinkedIn
+
+                </a>
+
+                <a
+                    class="social"
+                    href="https://www.instagram.com/_.varshini_gowda.__"
+                    target="_blank"
+                    rel="noopener noreferrer">
+
+                    Instagram
+
+                </a>
+
+                <a
+                    class="social"
+                    href="mailto:varshinisn98@gmail.com">
+
+                    Email
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+</main>
+
+
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+
+<footer>
+
+    <div class="container">
+
+        <div class="footer-line"></div>
+
+        <p>
+            © 2026 Varshini S N. Designed & built with curiosity.
+        </p>
+
+    </div>
+
+</footer>
+
+
+
+<!-- =========================================================
+     JAVASCRIPT
+========================================================= -->
+
+<script>
+
+    const menuBtn = document.getElementById("menuBtn");
+    const navLinks = document.getElementById("navLinks");
+
+    menuBtn.addEventListener("click", () => {
+
+        navLinks.classList.toggle("active");
+
+    });
+
+
+    document.querySelectorAll(".nav-links a").forEach(link => {
+
+        link.addEventListener("click", () => {
+
+            navLinks.classList.remove("active");
+
+        });
+
+    });
+
+
+    /* Reveal cards when they enter viewport */
+
+    const observer = new IntersectionObserver(
+        entries => {
+
+            entries.forEach(entry => {
+
+                if (entry.isIntersecting) {
+
+                    entry.target.style.opacity = "1";
+                    entry.target.style.transform = "translateY(0)";
+
+                }
+
+            });
+
+        },
+        {
+            threshold: 0.12
+        }
+    );
+
+
+    document.querySelectorAll(
+        ".glass-card, .project-card, .timeline-item"
+    ).forEach(element => {
+
+        element.style.opacity = "0";
+        element.style.transform = "translateY(25px)";
+        element.style.transition = "opacity 0.7s ease, transform 0.7s ease";
+
+        observer.observe(element);
+
+    });
+
+</script>
+
+
+</body>
+</html>
