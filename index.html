@@ -2,36 +2,58 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Varshini S N | AI & ML Developer</title>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
 
     <meta name="description"
-        content="Varshini S N - Engineering student and AI & ML developer passionate about Artificial Intelligence, Machine Learning, Generative AI and software development.">
+          content="Varshini S N - Engineering Student and AI & ML Developer">
 
-    <meta name="theme-color" content="#0b0b0f">
+    <meta name="author"
+          content="Varshini S N">
+
+    <title>Varshini S N | AI & ML Developer</title>
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
-        rel="stylesheet">
+          rel="stylesheet">
 
     <!-- Icons -->
     <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
     <style>
 
-        /* =========================================================
-           RESET
-        ========================================================= */
+        /* =====================================================
+           GLOBAL
+        ===================================================== */
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+        }
+
+        :root {
+            --bg: #08090d;
+            --bg-soft: #0e1016;
+            --card: rgba(255, 255, 255, 0.045);
+            --card-hover: rgba(255, 255, 255, 0.075);
+
+            --text: #f5f5f5;
+            --text-soft: #a5a8b3;
+
+            --accent: #b69cff;
+            --accent-2: #7c5cff;
+
+            --border: rgba(255,255,255,0.09);
+
+            --max-width: 1180px;
+
+            --radius: 24px;
         }
 
         html {
@@ -40,8 +62,20 @@
 
         body {
             font-family: "DM Sans", sans-serif;
-            background: #09090b;
-            color: #f5f5f5;
+            background:
+                radial-gradient(
+                    circle at 80% 10%,
+                    rgba(124,92,255,0.14),
+                    transparent 30%
+                ),
+                radial-gradient(
+                    circle at 10% 30%,
+                    rgba(182,156,255,0.08),
+                    transparent 25%
+                ),
+                var(--bg);
+
+            color: var(--text);
             line-height: 1.6;
             overflow-x: hidden;
         }
@@ -56,91 +90,32 @@
             display: block;
         }
 
-        button {
-            font-family: inherit;
-        }
-
-        ::selection {
-            background: #ffffff;
-            color: #09090b;
-        }
-
-
-        /* =========================================================
-           BACKGROUND
-        ========================================================= */
-
-        body::before {
-            content: "";
-            position: fixed;
-            width: 500px;
-            height: 500px;
-            border-radius: 50%;
-            background: rgba(140, 100, 255, 0.08);
-            filter: blur(100px);
-            top: -180px;
-            right: -120px;
-            pointer-events: none;
-            z-index: -2;
-        }
-
-        body::after {
-            content: "";
-            position: fixed;
-            width: 450px;
-            height: 450px;
-            border-radius: 50%;
-            background: rgba(50, 150, 255, 0.06);
-            filter: blur(100px);
-            bottom: -150px;
-            left: -150px;
-            pointer-events: none;
-            z-index: -2;
-        }
-
-        .grid-bg {
-            position: fixed;
-            inset: 0;
-            background-image:
-                linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
-            background-size: 70px 70px;
-            mask-image: linear-gradient(to bottom, black, transparent 85%);
-            pointer-events: none;
-            z-index: -3;
-        }
-
-
-        /* =========================================================
-           CONTAINER
-        ========================================================= */
-
         .container {
-            width: min(1120px, 90%);
+            width: min(92%, var(--max-width));
             margin: auto;
         }
 
 
-        /* =========================================================
+        /* =====================================================
            NAVBAR
-        ========================================================= */
+        ===================================================== */
 
-        nav {
+        header {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             z-index: 1000;
 
-            background: rgba(9, 9, 11, 0.72);
+            background: rgba(8, 9, 13, 0.72);
             backdrop-filter: blur(18px);
-            -webkit-backdrop-filter: blur(18px);
 
             border-bottom: 1px solid rgba(255,255,255,0.06);
         }
 
-        .nav-inner {
-            height: 74px;
+        nav {
+            height: 78px;
+
             display: flex;
             align-items: center;
             justify-content: space-between;
@@ -148,68 +123,70 @@
 
         .logo {
             font-family: "Space Grotesk", sans-serif;
-            font-size: 1.2rem;
+            font-size: 1.25rem;
             font-weight: 700;
             letter-spacing: -0.5px;
         }
 
         .logo span {
-            color: #9b7cff;
+            color: var(--accent);
         }
 
         .nav-links {
             display: flex;
             align-items: center;
-            gap: 30px;
+            gap: 34px;
             list-style: none;
         }
 
         .nav-links a {
-            color: #a1a1aa;
+            color: var(--text-soft);
             font-size: 0.92rem;
-            transition: 0.3s;
+            transition: 0.3s ease;
         }
 
         .nav-links a:hover {
-            color: #ffffff;
+            color: white;
         }
 
-        .nav-contact {
-            padding: 9px 17px;
-            border: 1px solid rgba(255,255,255,0.15);
-            border-radius: 100px;
-            color: #fff !important;
+        .nav-button {
+            padding: 10px 18px;
+            border: 1px solid var(--border);
+            border-radius: 50px;
         }
 
-        .nav-contact:hover {
-            background: #fff;
-            color: #09090b !important;
+        .nav-button:hover {
+            background: white;
+            color: #08090d !important;
         }
 
         .menu-btn {
             display: none;
             background: none;
             border: none;
-            color: #fff;
+            color: white;
             font-size: 1.4rem;
             cursor: pointer;
         }
 
 
-        /* =========================================================
+        /* =====================================================
            HERO
-        ========================================================= */
+        ===================================================== */
 
         .hero {
             min-height: 100vh;
-            padding-top: 140px;
+
             display: flex;
             align-items: center;
+
+            padding-top: 110px;
+            padding-bottom: 80px;
         }
 
         .hero-grid {
             display: grid;
-            grid-template-columns: 1.2fr 0.8fr;
+            grid-template-columns: 1.15fr 0.85fr;
             gap: 70px;
             align-items: center;
         }
@@ -217,41 +194,49 @@
         .eyebrow {
             display: inline-flex;
             align-items: center;
-            gap: 9px;
+            gap: 10px;
 
-            padding: 7px 13px;
-            border: 1px solid rgba(255,255,255,0.1);
+            padding: 8px 14px;
+
+            border: 1px solid var(--border);
+            border-radius: 50px;
+
             background: rgba(255,255,255,0.035);
-            border-radius: 100px;
 
-            color: #b9b9c2;
-            font-size: 0.8rem;
+            color: var(--text-soft);
+
+            font-size: 0.82rem;
             margin-bottom: 25px;
         }
 
         .status-dot {
-            width: 7px;
-            height: 7px;
+            width: 8px;
+            height: 8px;
+            background: #7ee787;
             border-radius: 50%;
-            background: #7cffb2;
-            box-shadow: 0 0 12px #7cffb2;
+            box-shadow: 0 0 12px #7ee787;
         }
 
         .hero h1 {
             font-family: "Space Grotesk", sans-serif;
-            font-size: clamp(3.3rem, 7vw, 6.4rem);
+
+            font-size: clamp(3.2rem, 7vw, 6.5rem);
+
             line-height: 0.98;
-            letter-spacing: -4px;
+
+            letter-spacing: -5px;
+
             margin-bottom: 25px;
         }
 
         .hero h1 .gradient {
             background: linear-gradient(
-                100deg,
+                120deg,
                 #ffffff,
-                #a991ff,
-                #6ee7ff
+                var(--accent),
+                #8b6cff
             );
+
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
@@ -259,9 +244,11 @@
 
         .hero-description {
             max-width: 650px;
-            color: #a1a1aa;
-            font-size: 1.08rem;
-            line-height: 1.8;
+
+            color: var(--text-soft);
+
+            font-size: 1.05rem;
+
             margin-bottom: 32px;
         }
 
@@ -274,466 +261,552 @@
         .btn {
             display: inline-flex;
             align-items: center;
+            justify-content: center;
             gap: 9px;
 
-            padding: 13px 20px;
-            border-radius: 10px;
+            padding: 13px 21px;
 
-            font-weight: 600;
+            border-radius: 50px;
+
             font-size: 0.9rem;
+            font-weight: 600;
 
-            transition: 0.3s;
+            transition: 0.3s ease;
+
+            border: 1px solid var(--border);
         }
 
         .btn-primary {
-            background: #ffffff;
-            color: #09090b;
+            background: white;
+            color: #08090d;
+            border-color: white;
         }
 
         .btn-primary:hover {
             transform: translateY(-3px);
-            box-shadow: 0 12px 35px rgba(255,255,255,0.13);
+            box-shadow: 0 10px 35px rgba(255,255,255,0.12);
         }
 
         .btn-secondary {
-            border: 1px solid rgba(255,255,255,0.14);
-            color: #e4e4e7;
-            background: rgba(255,255,255,0.025);
+            background: rgba(255,255,255,0.04);
         }
 
         .btn-secondary:hover {
-            background: rgba(255,255,255,0.08);
+            background: rgba(255,255,255,0.09);
             transform: translateY(-3px);
         }
 
 
-        /* =========================================================
+        /* =====================================================
            PROFILE IMAGE
-        ========================================================= */
+        ===================================================== */
 
-        .hero-photo {
+        .hero-image {
             display: flex;
             justify-content: center;
             position: relative;
         }
 
-        .photo-wrapper {
-            position: relative;
-            width: min(390px, 85vw);
-        }
-
-        .photo-wrapper::before {
-            content: "";
-            position: absolute;
-            inset: -16px;
-            border: 1px solid rgba(155,124,255,0.2);
-            border-radius: 50%;
-            animation: rotate 18s linear infinite;
-        }
-
-        .photo-wrapper::after {
-            content: "";
-            position: absolute;
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            background: #9b7cff;
-            filter: blur(50px);
-            top: 20px;
-            right: 15px;
-            opacity: 0.35;
-        }
-
-        .profile-image {
-            width: 100%;
+        .image-wrapper {
+            width: min(390px, 82vw);
             aspect-ratio: 1;
-            object-fit: cover;
+
             border-radius: 50%;
-            border: 5px solid rgba(255,255,255,0.08);
+
+            padding: 8px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(182,156,255,0.8),
+                    rgba(124,92,255,0.15),
+                    transparent
+                );
+
             position: relative;
-            z-index: 2;
-            box-shadow:
-                0 30px 80px rgba(0,0,0,0.45),
-                0 0 0 1px rgba(255,255,255,0.04);
+
+            animation: float 5s ease-in-out infinite;
         }
 
-        @keyframes rotate {
-            from {
-                transform: rotate(0deg);
+        .image-wrapper::before {
+            content: "";
+
+            position: absolute;
+            inset: -25px;
+
+            border: 1px solid rgba(182,156,255,0.1);
+            border-radius: 50%;
+        }
+
+        .image-wrapper img {
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+
+            border-radius: 50%;
+
+            border: 5px solid var(--bg);
+        }
+
+        @keyframes float {
+            0%,100% {
+                transform: translateY(0);
             }
 
-            to {
-                transform: rotate(360deg);
+            50% {
+                transform: translateY(-12px);
             }
         }
 
 
-        /* =========================================================
+        /* =====================================================
+           SOCIALS
+        ===================================================== */
+
+        .socials {
+            display: flex;
+            gap: 12px;
+            margin-top: 30px;
+        }
+
+        .socials a {
+            width: 42px;
+            height: 42px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border: 1px solid var(--border);
+            border-radius: 50%;
+
+            color: var(--text-soft);
+
+            transition: 0.3s ease;
+        }
+
+        .socials a:hover {
+            color: white;
+            background: var(--card-hover);
+            transform: translateY(-4px);
+        }
+
+
+        /* =====================================================
            SECTION
-        ========================================================= */
+        ===================================================== */
 
         section {
             padding: 110px 0;
         }
 
+        .section-heading {
+            margin-bottom: 55px;
+        }
+
         .section-label {
-            color: #9b7cff;
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            font-size: 0.72rem;
+            color: var(--accent);
+            font-size: 0.78rem;
             font-weight: 700;
-            margin-bottom: 13px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+
+            margin-bottom: 10px;
         }
 
-        .section-title {
+        .section-heading h2 {
             font-family: "Space Grotesk", sans-serif;
-            font-size: clamp(2rem, 4vw, 3.3rem);
-            letter-spacing: -1.5px;
-            margin-bottom: 18px;
+
+            font-size: clamp(2rem, 5vw, 3.5rem);
+
+            letter-spacing: -2px;
         }
 
-        .section-subtitle {
-            color: #8f8f98;
+        .section-heading p {
             max-width: 650px;
-            margin-bottom: 45px;
+            color: var(--text-soft);
+            margin-top: 12px;
         }
 
 
-        /* =========================================================
+        /* =====================================================
            ABOUT
-        ========================================================= */
+        ===================================================== */
 
         .about-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 30px;
+
+            gap: 25px;
         }
 
         .about-card {
             padding: 35px;
-            border: 1px solid rgba(255,255,255,0.08);
-            background: rgba(255,255,255,0.025);
-            border-radius: 18px;
+
+            border: 1px solid var(--border);
+            background: var(--card);
+
+            border-radius: var(--radius);
+
+            transition: 0.3s ease;
+        }
+
+        .about-card:hover {
+            background: var(--card-hover);
+            transform: translateY(-5px);
         }
 
         .about-card p {
-            color: #a1a1aa;
-            line-height: 1.9;
+            color: var(--text-soft);
+            margin-bottom: 18px;
         }
 
-        .about-card p + p {
-            margin-top: 18px;
+        .about-card strong {
+            color: white;
         }
 
-        .mini-cards {
+
+        /* =====================================================
+           SKILLS
+        ===================================================== */
+
+        .skills-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+
+            grid-template-columns:
+                repeat(4, 1fr);
+
             gap: 15px;
         }
 
-        .mini-card {
-            padding: 25px;
-            border: 1px solid rgba(255,255,255,0.08);
-            background: rgba(255,255,255,0.025);
-            border-radius: 16px;
-        }
-
-        .mini-card i {
-            font-size: 1.3rem;
-            color: #9b7cff;
-            margin-bottom: 14px;
-        }
-
-        .mini-card h3 {
-            font-family: "Space Grotesk", sans-serif;
-            font-size: 1rem;
-            margin-bottom: 6px;
-        }
-
-        .mini-card span {
-            color: #777780;
-            font-size: 0.82rem;
-        }
-
-
-        /* =========================================================
-           SKILLS
-        ========================================================= */
-
-        .skills-grid {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-
         .skill {
-            padding: 10px 15px;
-            border: 1px solid rgba(255,255,255,0.09);
-            border-radius: 100px;
-            color: #c8c8cf;
-            background: rgba(255,255,255,0.025);
-            font-size: 0.84rem;
-            transition: 0.25s;
+            padding: 20px;
+
+            border: 1px solid var(--border);
+
+            background: var(--card);
+
+            border-radius: 18px;
+
+            display: flex;
+            align-items: center;
+            gap: 13px;
+
+            transition: 0.3s ease;
         }
 
         .skill:hover {
-            transform: translateY(-3px);
-            border-color: rgba(155,124,255,0.45);
-            color: #ffffff;
-            background: rgba(155,124,255,0.08);
+            transform: translateY(-4px);
+            background: var(--card-hover);
+            border-color: rgba(182,156,255,0.25);
+        }
+
+        .skill i {
+            color: var(--accent);
+            font-size: 1.15rem;
+        }
+
+        .skill span {
+            font-size: 0.9rem;
+            color: #ddd;
         }
 
 
-        /* =========================================================
+        /* =====================================================
            PROJECTS
-        ========================================================= */
+        ===================================================== */
 
         .projects-grid {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 22px;
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap: 25px;
         }
 
         .project-card {
-            position: relative;
-            padding: 30px;
-            min-height: 310px;
+            padding: 32px;
 
-            border: 1px solid rgba(255,255,255,0.08);
+            border: 1px solid var(--border);
+
             background:
                 linear-gradient(
                     145deg,
-                    rgba(255,255,255,0.045),
-                    rgba(255,255,255,0.015)
+                    rgba(255,255,255,0.055),
+                    rgba(255,255,255,0.02)
                 );
 
-            border-radius: 20px;
+            border-radius: var(--radius);
+
+            position: relative;
+
             overflow: hidden;
-            transition: 0.35s;
+
+            transition: 0.35s ease;
+        }
+
+        .project-card::after {
+            content: "";
+
+            position: absolute;
+
+            width: 180px;
+            height: 180px;
+
+            right: -90px;
+            top: -90px;
+
+            border-radius: 50%;
+
+            background: rgba(124,92,255,0.12);
+
+            filter: blur(10px);
         }
 
         .project-card:hover {
-            transform: translateY(-7px);
-            border-color: rgba(155,124,255,0.3);
-            box-shadow: 0 25px 60px rgba(0,0,0,0.25);
+            transform: translateY(-8px);
+
+            border-color:
+                rgba(182,156,255,0.25);
         }
 
         .project-number {
-            position: absolute;
-            top: 25px;
-            right: 28px;
-            color: rgba(255,255,255,0.13);
             font-family: "Space Grotesk", sans-serif;
-            font-size: 2.5rem;
-            font-weight: 700;
-        }
 
-        .project-icon {
-            width: 50px;
-            height: 50px;
-            display: grid;
-            place-items: center;
-            border-radius: 13px;
-            background: rgba(155,124,255,0.1);
-            color: #b09bff;
-            font-size: 1.2rem;
-            margin-bottom: 25px;
+            color: var(--accent);
+
+            font-size: 0.8rem;
+
+            margin-bottom: 22px;
         }
 
         .project-card h3 {
             font-family: "Space Grotesk", sans-serif;
-            font-size: 1.45rem;
+
+            font-size: 1.7rem;
+
             margin-bottom: 12px;
         }
 
         .project-card p {
-            color: #909098;
-            font-size: 0.92rem;
-            line-height: 1.75;
+            color: var(--text-soft);
+
+            font-size: 0.93rem;
+
             margin-bottom: 22px;
         }
 
-        .project-tags {
+        .tags {
             display: flex;
             flex-wrap: wrap;
-            gap: 7px;
+            gap: 8px;
+
             margin-bottom: 25px;
         }
 
-        .project-tags span {
-            font-size: 0.7rem;
-            color: #aaaab2;
-            border: 1px solid rgba(255,255,255,0.08);
-            padding: 5px 9px;
-            border-radius: 6px;
+        .tag {
+            padding: 6px 10px;
+
+            border-radius: 50px;
+
+            background: rgba(182,156,255,0.09);
+
+            border: 1px solid rgba(182,156,255,0.14);
+
+            color: #d7caff;
+
+            font-size: 0.72rem;
         }
 
         .project-link {
             display: inline-flex;
+
             align-items: center;
+
             gap: 8px;
-            color: #ffffff;
+
             font-size: 0.85rem;
+
             font-weight: 600;
-        }
-
-        .project-link:hover {
-            color: #b09bff;
-        }
-
-
-        /* =========================================================
-           FOCUS
-        ========================================================= */
-
-        .focus-box {
-            border: 1px solid rgba(255,255,255,0.08);
-            border-radius: 22px;
-            padding: 45px;
-
-            background:
-                radial-gradient(
-                    circle at 80% 20%,
-                    rgba(155,124,255,0.12),
-                    transparent 35%
-                ),
-                rgba(255,255,255,0.025);
-        }
-
-        .focus-box h3 {
-            font-family: "Space Grotesk", sans-serif;
-            font-size: 1.7rem;
-            margin-bottom: 15px;
-        }
-
-        .focus-box p {
-            max-width: 750px;
-            color: #9999a2;
-            line-height: 1.8;
-        }
-
-
-        /* =========================================================
-           CONTACT
-        ========================================================= */
-
-        .contact {
-            text-align: center;
-        }
-
-        .contact-content {
-            max-width: 700px;
-            margin: auto;
-        }
-
-        .contact-content .section-title {
-            font-size: clamp(2.5rem, 5vw, 4.5rem);
-        }
-
-        .contact-content p {
-            color: #909098;
-            margin-bottom: 30px;
-        }
-
-        .socials {
-            display: flex;
-            justify-content: center;
-            gap: 12px;
-            flex-wrap: wrap;
-            margin-top: 28px;
-        }
-
-        .social {
-            width: 45px;
-            height: 45px;
-            display: grid;
-            place-items: center;
-
-            border: 1px solid rgba(255,255,255,0.1);
-            border-radius: 50%;
-            color: #aaaab2;
 
             transition: 0.3s;
         }
 
-        .social:hover {
-            color: #fff;
-            background: rgba(255,255,255,0.08);
-            transform: translateY(-4px);
+        .project-link:hover {
+            color: var(--accent);
+            gap: 12px;
         }
 
 
-        /* =========================================================
+        /* =====================================================
+           WHAT I DO
+        ===================================================== */
+
+        .services-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 18px;
+        }
+
+        .service {
+            padding: 30px;
+
+            border: 1px solid var(--border);
+
+            border-radius: 22px;
+
+            background: var(--card);
+
+            transition: 0.3s ease;
+        }
+
+        .service:hover {
+            transform: translateY(-5px);
+            background: var(--card-hover);
+        }
+
+        .service-icon {
+            width: 50px;
+            height: 50px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 15px;
+
+            background:
+                rgba(182,156,255,0.1);
+
+            color: var(--accent);
+
+            margin-bottom: 20px;
+        }
+
+        .service h3 {
+            margin-bottom: 8px;
+
+            font-family: "Space Grotesk", sans-serif;
+        }
+
+        .service p {
+            color: var(--text-soft);
+            font-size: 0.9rem;
+        }
+
+
+        /* =====================================================
+           CONTACT
+        ===================================================== */
+
+        .contact-box {
+            padding: 60px 40px;
+
+            text-align: center;
+
+            border-radius: 30px;
+
+            border: 1px solid var(--border);
+
+            background:
+                radial-gradient(
+                    circle at center,
+                    rgba(124,92,255,0.14),
+                    transparent 55%
+                ),
+                var(--card);
+        }
+
+        .contact-box h2 {
+            font-family: "Space Grotesk", sans-serif;
+
+            font-size: clamp(2.3rem, 5vw, 4rem);
+
+            letter-spacing: -2px;
+
+            margin-bottom: 15px;
+        }
+
+        .contact-box p {
+            color: var(--text-soft);
+
+            max-width: 600px;
+
+            margin: auto auto 30px;
+        }
+
+
+        /* =====================================================
            FOOTER
-        ========================================================= */
+        ===================================================== */
 
         footer {
-            border-top: 1px solid rgba(255,255,255,0.06);
-            padding: 28px 0;
-            color: #66666f;
-            font-size: 0.8rem;
+            padding: 35px 0;
+
+            border-top: 1px solid var(--border);
+
+            color: var(--text-soft);
+
+            font-size: 0.82rem;
         }
 
         .footer-inner {
             display: flex;
+
+            align-items: center;
+
             justify-content: space-between;
-            gap: 20px;
+        }
+
+        .footer-socials {
+            display: flex;
+            gap: 15px;
+        }
+
+        .footer-socials a:hover {
+            color: white;
         }
 
 
-        /* =========================================================
-           REVEAL ANIMATION
-        ========================================================= */
+        /* =====================================================
+           SCROLL REVEAL
+        ===================================================== */
 
         .reveal {
             opacity: 0;
+
             transform: translateY(25px);
-            transition: opacity 0.8s ease, transform 0.8s ease;
+
+            transition:
+                opacity 0.8s ease,
+                transform 0.8s ease;
         }
 
-        .reveal.visible {
+        .reveal.active {
             opacity: 1;
             transform: translateY(0);
         }
 
 
-        /* =========================================================
+        /* =====================================================
            RESPONSIVE
-        ========================================================= */
+        ===================================================== */
 
-        @media (max-width: 850px) {
-
-            .nav-links {
-                position: absolute;
-                top: 74px;
-                left: 0;
-                width: 100%;
-
-                padding: 25px;
-
-                display: none;
-                flex-direction: column;
-                align-items: flex-start;
-
-                background: rgba(9,9,11,0.97);
-                border-bottom: 1px solid rgba(255,255,255,0.08);
-            }
-
-            .nav-links.active {
-                display: flex;
-            }
-
-            .menu-btn {
-                display: block;
-            }
-
-            .hero {
-                padding-top: 120px;
-            }
+        @media (max-width: 900px) {
 
             .hero-grid {
                 grid-template-columns: 1fr;
+
                 text-align: center;
+            }
+
+            .hero-image {
+                order: -1;
             }
 
             .hero-description {
@@ -741,59 +814,92 @@
                 margin-right: auto;
             }
 
-            .hero-buttons {
+            .hero-buttons,
+            .socials {
                 justify-content: center;
-            }
-
-            .hero-photo {
-                order: -1;
-            }
-
-            .photo-wrapper {
-                width: min(300px, 75vw);
             }
 
             .about-grid {
                 grid-template-columns: 1fr;
             }
 
-            .projects-grid {
-                grid-template-columns: 1fr;
+            .skills-grid {
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+
+            .services-grid {
+                grid-template-columns:
+                    1fr;
             }
         }
 
 
-        @media (max-width: 600px) {
+        @media (max-width: 700px) {
 
-            .container {
-                width: 88%;
+            .nav-links {
+                position: fixed;
+
+                top: 78px;
+                left: 0;
+
+                width: 100%;
+
+                padding: 25px;
+
+                flex-direction: column;
+
+                background: rgba(8,9,13,0.97);
+
+                border-bottom:
+                    1px solid var(--border);
+
+                transform:
+                    translateY(-150%);
+
+                transition: 0.35s ease;
+            }
+
+            .nav-links.open {
+                transform: translateY(0);
+            }
+
+            .menu-btn {
+                display: block;
+            }
+
+            .nav-button {
+                border: none;
+            }
+
+            .hero h1 {
+                letter-spacing: -3px;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
             }
 
             section {
                 padding: 80px 0;
             }
 
-            .hero h1 {
-                letter-spacing: -2.5px;
-                font-size: 3.2rem;
-            }
-
             .about-card,
-            .focus-box {
+            .project-card {
                 padding: 25px;
             }
 
-            .mini-cards {
-                grid-template-columns: 1fr;
-            }
-
-            .project-card {
-                min-height: auto;
+            .contact-box {
+                padding: 45px 25px;
             }
 
             .footer-inner {
                 flex-direction: column;
-                text-align: center;
+                gap: 15px;
             }
         }
 
@@ -803,22 +909,22 @@
 
 <body>
 
-    <div class="grid-bg"></div>
 
+<!-- =========================================================
+     NAVIGATION
+========================================================= -->
 
-    <!-- =========================================================
-         NAVIGATION
-    ========================================================= -->
+<header>
 
-    <nav>
+    <div class="container">
 
-        <div class="container nav-inner">
+        <nav>
 
             <a href="#home" class="logo">
-                Varshini<span>.</span>
+                Varshini <span>S N</span>
             </a>
 
-            <button class="menu-btn" id="menuBtn" aria-label="Open menu">
+            <button class="menu-btn" id="menuBtn">
                 <i class="fa-solid fa-bars"></i>
             </button>
 
@@ -841,573 +947,789 @@
                 </li>
 
                 <li>
-                    <a href="#contact" class="nav-contact">Let's Connect</a>
+                    <a href="#contact" class="nav-button">
+                        Contact
+                    </a>
                 </li>
 
             </ul>
 
-        </div>
+        </nav>
 
-    </nav>
+    </div>
+
+</header>
 
 
-    <!-- =========================================================
-         HERO
-    ========================================================= -->
 
-    <main>
+<!-- =========================================================
+     HERO
+========================================================= -->
 
-        <section class="hero" id="home">
+<main>
 
-            <div class="container hero-grid">
+<section class="hero" id="home">
 
-                <div class="hero-content reveal">
+    <div class="container">
 
-                    <div class="eyebrow">
-                        <span class="status-dot"></span>
-                        Engineering Student · AI & ML Developer
-                    </div>
+        <div class="hero-grid">
 
-                    <h1>
-                        Hi, I'm<br>
-                        <span class="gradient">Varshini.</span>
-                    </h1>
 
-                    <p class="hero-description">
-                        I build practical AI-powered solutions that turn ideas
-                        into useful products. I'm passionate about Artificial
-                        Intelligence, Machine Learning, Generative AI and
-                        software development.
-                    </p>
+            <div class="hero-content reveal">
 
-                    <div class="hero-buttons">
+                <div class="eyebrow">
 
-                        <a href="#projects" class="btn btn-primary">
-                            View My Work
-                            <i class="fa-solid fa-arrow-down"></i>
-                        </a>
+                    <span class="status-dot"></span>
 
-                        <a href="#contact" class="btn btn-secondary">
-                            Let's Connect
-                            <i class="fa-regular fa-paper-plane"></i>
-                        </a>
-
-                    </div>
+                    Open to learning & opportunities
 
                 </div>
 
 
-                <div class="hero-photo reveal">
+                <h1>
 
-                    <div class="photo-wrapper">
+                    Hi, I'm
 
-                        <!-- Your uploaded GitHub image -->
-                        <img
-                            src="profile.jpeg"
-                            alt="Varshini S N"
-                            class="profile-image"
-                        >
+                    <span class="gradient">
+                        Varshini S N
+                    </span>
 
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
+                </h1>
 
 
+                <p class="hero-description">
 
-        <!-- =====================================================
-             ABOUT
-        ====================================================== -->
+                    An engineering student passionate about
+                    <strong>Artificial Intelligence, Machine Learning</strong>
+                    and software development.
 
-        <section id="about">
+                    I enjoy transforming ideas into practical,
+                    intelligent applications using modern technologies.
 
-            <div class="container">
-
-                <div class="section-label reveal">
-                    01 · About
-                </div>
-
-                <h2 class="section-title reveal">
-                    Building with curiosity.
-                </h2>
-
-                <p class="section-subtitle reveal">
-                    I enjoy learning new technologies, experimenting with AI,
-                    and turning concepts into working applications.
                 </p>
 
 
-                <div class="about-grid">
+                <div class="hero-buttons">
 
-                    <div class="about-card reveal">
+                    <a href="#projects"
+                       class="btn btn-primary">
 
-                        <p>
-                            I am an engineering student with a strong interest
-                            in <strong>Artificial Intelligence, Machine
-                            Learning, and software development.</strong>
-                        </p>
+                        <i class="fa-solid fa-code"></i>
 
-                        <p>
-                            I enjoy solving real-world problems by building
-                            AI-powered applications using technologies such as
-                            <strong>Python, Generative AI, RAG, FastAPI and
-                            Streamlit.</strong>
-                        </p>
+                        Explore My Work
 
-                        <p>
-                            My projects have given me hands-on experience with
-                            intelligent document processing, resume analysis,
-                            semantic search and AI-assisted career and
-                            academic tools.
-                        </p>
-
-                    </div>
-
-
-                    <div class="mini-cards">
-
-                        <div class="mini-card reveal">
-                            <i class="fa-solid fa-brain"></i>
-                            <h3>AI & ML</h3>
-                            <span>Exploring intelligent systems</span>
-                        </div>
-
-                        <div class="mini-card reveal">
-                            <i class="fa-solid fa-code"></i>
-                            <h3>Development</h3>
-                            <span>Building practical applications</span>
-                        </div>
-
-                        <div class="mini-card reveal">
-                            <i class="fa-solid fa-wand-magic-sparkles"></i>
-                            <h3>Generative AI</h3>
-                            <span>Experimenting with modern AI</span>
-                        </div>
-
-                        <div class="mini-card reveal">
-                            <i class="fa-solid fa-lightbulb"></i>
-                            <h3>Problem Solving</h3>
-                            <span>Turning ideas into solutions</span>
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-
-        <!-- =====================================================
-             SKILLS
-        ====================================================== -->
-
-        <section id="skills">
-
-            <div class="container">
-
-                <div class="section-label reveal">
-                    02 · Skills
-                </div>
-
-                <h2 class="section-title reveal">
-                    Tools I work with.
-                </h2>
-
-                <p class="section-subtitle reveal">
-                    A growing toolkit built through projects, experimentation
-                    and hands-on learning.
-                </p>
-
-
-                <div class="skills-grid reveal">
-
-                    <span class="skill">Python</span>
-                    <span class="skill">Java</span>
-                    <span class="skill">HTML</span>
-
-                    <span class="skill">React</span>
-                    <span class="skill">Node.js</span>
-                    <span class="skill">Express.js</span>
-
-                    <span class="skill">FastAPI</span>
-                    <span class="skill">Flask</span>
-                    <span class="skill">Django</span>
-
-                    <span class="skill">Streamlit</span>
-                    <span class="skill">Flutter</span>
-
-                    <span class="skill">Generative AI</span>
-                    <span class="skill">RAG</span>
-                    <span class="skill">Machine Learning</span>
-
-                    <span class="skill">TensorFlow</span>
-                    <span class="skill">PyTorch</span>
-                    <span class="skill">Keras</span>
-                    <span class="skill">Scikit-learn</span>
-
-                    <span class="skill">Pandas</span>
-                    <span class="skill">NumPy</span>
-                    <span class="skill">Matplotlib</span>
-
-                    <span class="skill">MySQL</span>
-                    <span class="skill">SQLite</span>
-                    <span class="skill">MongoDB</span>
-                    <span class="skill">PostgreSQL</span>
-                    <span class="skill">Supabase</span>
-
-                    <span class="skill">Git</span>
-                    <span class="skill">GitHub</span>
-                    <span class="skill">Docker</span>
-
-                    <span class="skill">AWS</span>
-                    <span class="skill">Google Cloud</span>
-                    <span class="skill">Netlify</span>
-                    <span class="skill">Render</span>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-
-        <!-- =====================================================
-             PROJECTS
-        ====================================================== -->
-
-        <section id="projects">
-
-            <div class="container">
-
-                <div class="section-label reveal">
-                    03 · Projects
-                </div>
-
-                <h2 class="section-title reveal">
-                    Things I've built.
-                </h2>
-
-                <p class="section-subtitle reveal">
-                    A selection of AI-focused projects where I explored ideas,
-                    technologies and real-world use cases.
-                </p>
-
-
-                <div class="projects-grid">
-
-
-                    <!-- CareerPilot -->
-
-                    <article class="project-card reveal">
-
-                        <span class="project-number">01</span>
-
-                        <div class="project-icon">
-                            <i class="fa-solid fa-rocket"></i>
-                        </div>
-
-                        <h3>CareerPilot AI</h3>
-
-                        <p>
-                            An AI-powered career assistant focused on helping
-                            users explore career-related information and work
-                            with intelligent AI-driven tools.
-                        </p>
-
-                        <div class="project-tags">
-                            <span>AI</span>
-                            <span>Python</span>
-                            <span>Generative AI</span>
-                            <span>RAG</span>
-                        </div>
-
-                        <a
-                            href="https://github.com/varshinisn98-png/CareerPilot-AI"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            class="project-link"
-                        >
-                            View on GitHub
-                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                        </a>
-
-                    </article>
-
-
-                    <!-- Synora -->
-
-                    <article class="project-card reveal">
-
-                        <span class="project-number">02</span>
-
-                        <div class="project-icon">
-                            <i class="fa-solid fa-microchip"></i>
-                        </div>
-
-                        <h3>Synora AI</h3>
-
-                        <p>
-                            An AI-focused application exploring intelligent
-                            processing, semantic search and AI-assisted
-                            experiences for practical use cases.
-                        </p>
-
-                        <div class="project-tags">
-                            <span>AI</span>
-                            <span>Python</span>
-                            <span>Semantic Search</span>
-                            <span>RAG</span>
-                        </div>
-
-                        <a
-                            href="https://github.com/varshinisn98-png/synora-ai"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            class="project-link"
-                        >
-                            View on GitHub
-                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                        </a>
-
-                    </article>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-
-        <!-- =====================================================
-             CURRENT FOCUS
-        ====================================================== -->
-
-        <section>
-
-            <div class="container">
-
-                <div class="focus-box reveal">
-
-                    <div class="section-label">
-                        04 · Currently Exploring
-                    </div>
-
-                    <h3>
-                        Learning. Building. Experimenting.
-                    </h3>
-
-                    <p>
-                        I'm continuously exploring Artificial Intelligence,
-                        Machine Learning, Generative AI, RAG systems and
-                        modern software development. My goal is to keep
-                        transforming what I learn into useful, practical
-                        applications.
-                    </p>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-
-        <!-- =====================================================
-             CONTACT
-        ====================================================== -->
-
-        <section id="contact" class="contact">
-
-            <div class="container">
-
-                <div class="contact-content">
-
-                    <div class="section-label reveal">
-                        05 · Contact
-                    </div>
-
-                    <h2 class="section-title reveal">
-                        Let's build something
-                        <span class="gradient">interesting.</span>
-                    </h2>
-
-                    <p class="reveal">
-                        I'm always open to learning, collaborating on projects,
-                        discussing ideas and connecting with fellow developers
-                        and technology enthusiasts.
-                    </p>
-
-                    <a
-                        href="mailto:varshinisn98@gmail.com"
-                        class="btn btn-primary reveal"
-                    >
-                        Say Hello
-                        <i class="fa-regular fa-envelope"></i>
                     </a>
 
 
-                    <div class="socials reveal">
+                    <a href="#contact"
+                       class="btn btn-secondary">
 
-                        <a
-                            href="https://github.com/varshinisn98-png"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            class="social"
-                            aria-label="GitHub"
-                        >
-                            <i class="fa-brands fa-github"></i>
-                        </a>
+                        Let's Connect
 
-                        <a
-                            href="https://www.linkedin.com/in/varshini-s-n-537865302"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            class="social"
-                            aria-label="LinkedIn"
-                        >
-                            <i class="fa-brands fa-linkedin-in"></i>
-                        </a>
+                        <i class="fa-solid fa-arrow-right"></i>
 
-                        <a
-                            href="https://www.instagram.com/_.varshini_gowda.__"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            class="social"
-                            aria-label="Instagram"
-                        >
-                            <i class="fa-brands fa-instagram"></i>
-                        </a>
+                    </a>
 
-                        <a
-                            href="mailto:varshinisn98@gmail.com"
-                            class="social"
-                            aria-label="Email"
-                        >
-                            <i class="fa-regular fa-envelope"></i>
-                        </a>
+                </div>
 
-                    </div>
+
+                <div class="socials">
+
+                    <a href="https://github.com/varshinisn98-png"
+                       target="_blank"
+                       aria-label="GitHub">
+
+                        <i class="fa-brands fa-github"></i>
+
+                    </a>
+
+
+                    <a href="https://linkedin.com/in/varshini-s-n-537865302"
+                       target="_blank"
+                       aria-label="LinkedIn">
+
+                        <i class="fa-brands fa-linkedin-in"></i>
+
+                    </a>
+
+
+                    <a href="https://instagram.com/_.varshini_gowda.__"
+                       target="_blank"
+                       aria-label="Instagram">
+
+                        <i class="fa-brands fa-instagram"></i>
+
+                    </a>
+
+
+                    <a href="mailto:varshinisn98@gmail.com"
+                       aria-label="Email">
+
+                        <i class="fa-solid fa-envelope"></i>
+
+                    </a>
 
                 </div>
 
             </div>
 
-        </section>
-
-    </main>
 
 
+            <div class="hero-image reveal">
 
-    <!-- =========================================================
-         FOOTER
-    ========================================================= -->
+                <div class="image-wrapper">
 
-    <footer>
+                    <!--
+                    IMPORTANT:
+                    Upload your photo to the repository as:
 
-        <div class="container footer-inner">
+                    profile.png
+                    -->
 
-            <span>
-                © 2026 Varshini S N
-            </span>
+                    <img src="profile.png"
+                         alt="Varshini S N">
 
-            <span>
-                Designed & built with curiosity.
-            </span>
+                </div>
+
+            </div>
 
         </div>
 
-    </footer>
+    </div>
+
+</section>
 
 
 
-    <!-- =========================================================
-         JAVASCRIPT
-    ========================================================= -->
+<!-- =========================================================
+     ABOUT
+========================================================= -->
 
-    <script>
+<section id="about">
 
-        /* Mobile navigation */
+    <div class="container">
 
-        const menuBtn = document.getElementById("menuBtn");
-        const navLinks = document.getElementById("navLinks");
+        <div class="section-heading reveal">
 
-        menuBtn.addEventListener("click", () => {
+            <div class="section-label">
+                About Me
+            </div>
 
-            navLinks.classList.toggle("active");
+            <h2>
+                Building with curiosity.
+                <br>
+                Learning with purpose.
+            </h2>
 
-            const icon = menuBtn.querySelector("i");
+            <p>
+                I enjoy exploring technology through hands-on projects
+                and building solutions to real-world problems.
+            </p>
 
-            if (navLinks.classList.contains("active")) {
-                icon.classList.remove("fa-bars");
-                icon.classList.add("fa-xmark");
-            } else {
-                icon.classList.remove("fa-xmark");
-                icon.classList.add("fa-bars");
-            }
-
-        });
+        </div>
 
 
-        /* Close mobile menu after clicking a link */
+        <div class="about-grid">
 
-        document.querySelectorAll(".nav-links a").forEach(link => {
+
+            <div class="about-card reveal">
+
+                <p>
+
+                    I'm <strong>Varshini S N</strong>,
+                    an engineering student with a strong interest in
+                    Artificial Intelligence, Machine Learning and
+                    software development.
+
+                </p>
+
+                <p>
+
+                    I enjoy working with Python and modern AI technologies
+                    to create useful applications rather than just
+                    experimenting with concepts.
+
+                </p>
+
+            </div>
+
+
+            <div class="about-card reveal">
+
+                <p>
+
+                    My interests include
+                    <strong>Generative AI, RAG, semantic search,
+                    intelligent document processing and AI-powered tools.</strong>
+
+                </p>
+
+                <p>
+
+                    Projects such as CareerPilot AI and Synora AI
+                    have helped me explore how AI can be applied to
+                    practical career and academic use cases.
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     WHAT I DO
+========================================================= -->
+
+<section>
+
+    <div class="container">
+
+        <div class="section-heading reveal">
+
+            <div class="section-label">
+                What I Do
+            </div>
+
+            <h2>
+                Turning ideas into
+                <br>
+                working solutions.
+            </h2>
+
+        </div>
+
+
+        <div class="services-grid">
+
+
+            <div class="service reveal">
+
+                <div class="service-icon">
+
+                    <i class="fa-solid fa-brain"></i>
+
+                </div>
+
+                <h3>
+                    Artificial Intelligence
+                </h3>
+
+                <p>
+                    Exploring AI and Generative AI to create
+                    intelligent and practical applications.
+                </p>
+
+            </div>
+
+
+
+            <div class="service reveal">
+
+                <div class="service-icon">
+
+                    <i class="fa-solid fa-magnifying-glass-chart"></i>
+
+                </div>
+
+                <h3>
+                    Machine Learning
+                </h3>
+
+                <p>
+                    Working with data, machine learning concepts,
+                    semantic search and intelligent systems.
+                </p>
+
+            </div>
+
+
+
+            <div class="service reveal">
+
+                <div class="service-icon">
+
+                    <i class="fa-solid fa-laptop-code"></i>
+
+                </div>
+
+                <h3>
+                    Software Development
+                </h3>
+
+                <p>
+                    Building applications and APIs using Python,
+                    FastAPI, Streamlit and modern development tools.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     SKILLS
+========================================================= -->
+
+<section id="skills">
+
+    <div class="container">
+
+        <div class="section-heading reveal">
+
+            <div class="section-label">
+                Tech Stack
+            </div>
+
+            <h2>
+                Technologies I work with.
+            </h2>
+
+        </div>
+
+
+        <div class="skills-grid">
+
+
+            <div class="skill reveal">
+                <i class="fa-brands fa-python"></i>
+                <span>Python</span>
+            </div>
+
+
+            <div class="skill reveal">
+                <i class="fa-brands fa-java"></i>
+                <span>Java</span>
+            </div>
+
+
+            <div class="skill reveal">
+                <i class="fa-solid fa-brain"></i>
+                <span>Artificial Intelligence</span>
+            </div>
+
+
+            <div class="skill reveal">
+                <i class="fa-solid fa-robot"></i>
+                <span>Generative AI</span>
+            </div>
+
+
+            <div class="skill reveal">
+                <i class="fa-solid fa-database"></i>
+                <span>RAG</span>
+            </div>
+
+
+            <div class="skill reveal">
+                <i class="fa-solid fa-bolt"></i>
+                <span>FastAPI</span>
+            </div>
+
+
+            <div class="skill reveal">
+                <i class="fa-solid fa-chart-line"></i>
+                <span>Streamlit</span>
+            </div>
+
+
+            <div class="skill reveal">
+                <i class="fa-solid fa-cubes"></i>
+                <span>Machine Learning</span>
+            </div>
+
+
+            <div class="skill reveal">
+                <i class="fa-solid fa-table"></i>
+                <span>Pandas</span>
+            </div>
+
+
+            <div class="skill reveal">
+                <i class="fa-solid fa-calculator"></i>
+                <span>NumPy</span>
+            </div>
+
+
+            <div class="skill reveal">
+                <i class="fa-solid fa-chart-simple"></i>
+                <span>Matplotlib</span>
+            </div>
+
+
+            <div class="skill reveal">
+                <i class="fa-brands fa-git-alt"></i>
+                <span>Git & GitHub</span>
+            </div>
+
+
+            <div class="skill reveal">
+                <i class="fa-solid fa-database"></i>
+                <span>MySQL</span>
+            </div>
+
+
+            <div class="skill reveal">
+                <i class="fa-solid fa-database"></i>
+                <span>MongoDB</span>
+            </div>
+
+
+            <div class="skill reveal">
+                <i class="fa-brands fa-docker"></i>
+                <span>Docker</span>
+            </div>
+
+
+            <div class="skill reveal">
+                <i class="fa-solid fa-cloud"></i>
+                <span>AWS / Google Cloud</span>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     PROJECTS
+========================================================= -->
+
+<section id="projects">
+
+    <div class="container">
+
+        <div class="section-heading reveal">
+
+            <div class="section-label">
+                Featured Projects
+            </div>
+
+            <h2>
+                Things I've built.
+            </h2>
+
+            <p>
+                A selection of projects where I explored AI,
+                software development and practical problem solving.
+            </p>
+
+        </div>
+
+
+        <div class="projects-grid">
+
+
+            <!-- PROJECT 1 -->
+
+            <article class="project-card reveal">
+
+                <div class="project-number">
+                    01 / PROJECT
+                </div>
+
+                <h3>
+                    CareerPilot AI
+                </h3>
+
+                <p>
+
+                    An AI-powered career assistance project exploring
+                    resume analysis, intelligent recommendations and
+                    AI-assisted career support.
+
+                </p>
+
+
+                <div class="tags">
+
+                    <span class="tag">Python</span>
+
+                    <span class="tag">AI</span>
+
+                    <span class="tag">Generative AI</span>
+
+                    <span class="tag">RAG</span>
+
+                </div>
+
+
+                <a href="https://github.com/varshinisn98-png/CareerPilot-AI"
+                   target="_blank"
+                   class="project-link">
+
+                    View on GitHub
+
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
+                </a>
+
+            </article>
+
+
+
+            <!-- PROJECT 2 -->
+
+            <article class="project-card reveal">
+
+                <div class="project-number">
+                    02 / PROJECT
+                </div>
+
+                <h3>
+                    Synora AI
+                </h3>
+
+                <p>
+
+                    An AI-focused application exploring intelligent
+                    academic and information assistance through
+                    modern AI and semantic search concepts.
+
+                </p>
+
+
+                <div class="tags">
+
+                    <span class="tag">Python</span>
+
+                    <span class="tag">AI</span>
+
+                    <span class="tag">Semantic Search</span>
+
+                    <span class="tag">Generative AI</span>
+
+                </div>
+
+
+                <a href="https://github.com/varshinisn98-png/synora-ai"
+                   target="_blank"
+                   class="project-link">
+
+                    View on GitHub
+
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
+                </a>
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     CONTACT
+========================================================= -->
+
+<section id="contact">
+
+    <div class="container">
+
+        <div class="contact-box reveal">
+
+            <div class="section-label">
+                Get In Touch
+            </div>
+
+            <h2>
+                Let's build something
+                <span class="gradient">interesting.</span>
+            </h2>
+
+            <p>
+
+                I'm always interested in learning,
+                collaborating and exploring new ideas
+                in AI, ML and software development.
+
+            </p>
+
+
+            <a href="mailto:varshinisn98@gmail.com"
+               class="btn btn-primary">
+
+                <i class="fa-solid fa-envelope"></i>
+
+                Say Hello
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+</main>
+
+
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+
+<footer>
+
+    <div class="container">
+
+        <div class="footer-inner">
+
+            <div>
+                © 2026 Varshini S N
+            </div>
+
+
+            <div class="footer-socials">
+
+                <a href="https://github.com/varshinisn98-png"
+                   target="_blank">
+
+                    GitHub
+
+                </a>
+
+                <a href="https://linkedin.com/in/varshini-s-n-537865302"
+                   target="_blank">
+
+                    LinkedIn
+
+                </a>
+
+                <a href="mailto:varshinisn98@gmail.com">
+
+                    Email
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+
+<!-- =========================================================
+     JAVASCRIPT
+========================================================= -->
+
+<script>
+
+    /* =====================================================
+       MOBILE MENU
+    ===================================================== */
+
+    const menuBtn =
+        document.getElementById("menuBtn");
+
+    const navLinks =
+        document.getElementById("navLinks");
+
+
+    menuBtn.addEventListener("click", () => {
+
+        navLinks.classList.toggle("open");
+
+    });
+
+
+    /* Close menu after clicking a link */
+
+    document
+        .querySelectorAll(".nav-links a")
+        .forEach(link => {
 
             link.addEventListener("click", () => {
 
-                navLinks.classList.remove("active");
-
-                const icon = menuBtn.querySelector("i");
-
-                icon.classList.remove("fa-xmark");
-                icon.classList.add("fa-bars");
+                navLinks.classList.remove("open");
 
             });
 
         });
 
 
-        /* Scroll reveal animation */
 
-        const revealElements =
-            document.querySelectorAll(".reveal");
+    /* =====================================================
+       SCROLL REVEAL
+    ===================================================== */
 
-        const observer = new IntersectionObserver(
-            (entries) => {
+    const observer =
+        new IntersectionObserver(
+
+            entries => {
 
                 entries.forEach(entry => {
 
                     if (entry.isIntersecting) {
 
-                        entry.target.classList.add("visible");
-
-                        observer.unobserve(entry.target);
+                        entry.target.classList.add("active");
 
                     }
 
                 });
 
             },
+
             {
                 threshold: 0.12
             }
+
         );
 
 
-        revealElements.forEach(element => {
+    document
+        .querySelectorAll(".reveal")
+        .forEach(element => {
 
             observer.observe(element);
 
         });
 
-    </script>
+
+
+    /* =====================================================
+       NAVBAR SHADOW ON SCROLL
+    ===================================================== */
+
+    window.addEventListener("scroll", () => {
+
+        const header =
+            document.querySelector("header");
+
+        if (window.scrollY > 30) {
+
+            header.style.boxShadow =
+                "0 10px 40px rgba(0,0,0,0.2)";
+
+        } else {
+
+            header.style.boxShadow = "none";
+
+        }
+
+    });
+
+</script>
 
 </body>
 </html>
