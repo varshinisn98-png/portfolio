@@ -46,7 +46,7 @@ An AI-powered career guidance application designed to provide intelligent career
 https://github.com/varshinisn98-png/CareerPilot-AI
 
 🔗 **Live Demo:**
-https://careerpilot-frontend-t0et.onrender.com
+https://careerpilot-ai-j3qfpe5fyrdyey7vvzykqo.streamlit.app/
 
 ---
 
