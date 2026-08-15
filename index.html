@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -20,7 +21,6 @@
     >
 
     <style>
-
         /* =========================================================
            RESET
         ========================================================= */
@@ -142,6 +142,7 @@
 
         .section-label::before {
             content: "";
+
             width: 6px;
             height: 6px;
 
@@ -1184,13 +1185,11 @@
                 text-align: center;
             }
         }
-
     </style>
 </head>
 
 
 <body>
-
 
     <!-- =========================================================
          NAVIGATION
@@ -1207,11 +1206,8 @@
             <nav class="nav-links">
 
                 <a href="#home">Home</a>
-
                 <a href="#about">About</a>
-
                 <a href="#skills">Skills</a>
-
                 <a href="#projects">Projects</a>
 
                 <a href="#contact" class="nav-contact">
@@ -1227,7 +1223,6 @@
 
     <main>
 
-
         <!-- =========================================================
              HERO
         ========================================================= -->
@@ -1238,34 +1233,26 @@
 
                 <div class="hero-grid">
 
-
                     <div class="hero-content">
 
                         <div class="hero-badge">
                             Engineering Student · AI & ML Developer
                         </div>
 
-
                         <h1>
-
                             Hi, I'm
 
                             <span class="gradient-text">
                                 Varshini S N
                             </span>
-
                         </h1>
 
-
                         <p class="hero-description">
-
                             I build practical AI-powered solutions that turn
                             ideas into useful products. I'm passionate about
                             Artificial Intelligence, Machine Learning,
                             Generative AI and software development.
-
                         </p>
-
 
                         <div class="hero-buttons">
 
@@ -1290,8 +1277,6 @@
 
                         <div class="photo-ring">
 
-                            <!-- Keep profile.jpeg in the same folder as index.html -->
-
                             <img
                                 src="profile.jpeg"
                                 alt="Varshini S N"
@@ -1301,7 +1286,6 @@
                         </div>
 
                     </div>
-
 
                 </div>
 
@@ -1319,7 +1303,6 @@
             <div class="container">
 
                 <div class="about-grid">
-
 
                     <div>
 
@@ -1400,7 +1383,6 @@
 
                     </div>
 
-
                 </div>
 
             </div>
@@ -1433,15 +1415,12 @@
                 <div class="skills-grid">
 
                     <!-- Programming -->
-
                     <div class="skill">Python</div>
                     <div class="skill">Java</div>
                     <div class="skill">C</div>
                     <div class="skill">SQL</div>
 
-
                     <!-- AI / ML -->
-
                     <div class="skill">NLP</div>
                     <div class="skill">Generative AI</div>
                     <div class="skill">Prompt Engineering</div>
@@ -1450,22 +1429,16 @@
                     <div class="skill">Sentence Transformers</div>
                     <div class="skill">Scikit-learn</div>
 
-
                     <!-- Frameworks -->
-
                     <div class="skill">FastAPI</div>
                     <div class="skill">Streamlit</div>
 
-
                     <!-- Databases -->
-
                     <div class="skill">PostgreSQL</div>
                     <div class="skill">MySQL</div>
                     <div class="skill">Supabase</div>
 
-
                     <!-- Tools -->
-
                     <div class="skill">Gemini API</div>
                     <div class="skill">Git</div>
                     <div class="skill">GitHub</div>
@@ -1486,7 +1459,6 @@
         <section id="projects">
 
             <div class="container">
-
 
                 <div class="projects-header">
 
@@ -1522,9 +1494,8 @@
 
                 <div class="projects-grid">
 
-
                     <!-- =================================================
-                         CAREERPILOT
+                         CAREERPILOT AI
                     ================================================== -->
 
                     <article class="project-card">
@@ -1569,8 +1540,10 @@
                                 GitHub ↗
                             </a>
 
+                            <!-- UPDATED CAREERPILOT LIVE DEMO -->
+
                             <a
-                                href="https://careerpilot-frontend-t0et.onrender.com"
+                                href="https://careerpilot-ai-j3qfpe5fyrdyey7vvzykqo.streamlit.app/"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 class="project-link"
@@ -1584,7 +1557,7 @@
 
 
                     <!-- =================================================
-                         SYNORA
+                         SYNORA AI
                     ================================================== -->
 
                     <article class="project-card">
@@ -1643,7 +1616,6 @@
 
                     </article>
 
-
                 </div>
 
             </div>
@@ -1669,7 +1641,6 @@
 
 
                 <div class="experience-grid">
-
 
                     <div class="experience-card">
 
@@ -1703,7 +1674,6 @@
                         </p>
 
                     </div>
-
 
                 </div>
 
@@ -1789,7 +1759,6 @@
 
 
                     <div class="contact-links">
-
 
                         <!-- EMAIL -->
 
@@ -1900,7 +1869,6 @@
 
                         </a>
 
-
                     </div>
 
                 </div>
@@ -1908,7 +1876,6 @@
             </div>
 
         </section>
-
 
     </main>
 
@@ -1947,7 +1914,9 @@
 
     <script>
 
-        /* Highlight active navigation item */
+        /* =========================================================
+           HIGHLIGHT ACTIVE NAVIGATION ITEM
+        ========================================================= */
 
         const sections = document.querySelectorAll("section[id]");
         const navLinks = document.querySelectorAll(".nav-links a");
@@ -1981,7 +1950,9 @@
         });
 
 
-        /* Simple reveal animation */
+        /* =========================================================
+           SCROLL REVEAL ANIMATION
+        ========================================================= */
 
         const observer = new IntersectionObserver(
             entries => {
@@ -1991,7 +1962,9 @@
                     if (entry.isIntersecting) {
 
                         entry.target.style.opacity = "1";
-                        entry.target.style.transform = "translateY(0)";
+
+                        entry.target.style.transform =
+                            "translateY(0)";
 
                     }
 
@@ -2012,7 +1985,8 @@
 
                 element.style.opacity = "0";
 
-                element.style.transform = "translateY(20px)";
+                element.style.transform =
+                    "translateY(20px)";
 
                 element.style.transition =
                     "opacity .7s ease, transform .7s ease";
@@ -2023,6 +1997,6 @@
 
     </script>
 
-
 </body>
+
 </html>
