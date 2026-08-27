@@ -160,6 +160,7 @@ Worked with:
 * Participated in Silver Spectrum TechFest at New Horizon College of Engineering, Bengaluru
 * Participated in 24-Hour Hackathon at Rajeev Institute of Technology, Hassan
 * Participated in 24-Hour Hackathon at Bahubali College of Engineering, Shravanabelagola
+* Participated in the Bharatiya Antariksh Hackathon 2026, presented by ISRO and powered by Hack2skill
 * NPTEL Elite Certification — Cyber Security and Privacy
 * Strong interest in problem solving, teamwork, communication, leadership, adaptability, and quick learning
 
